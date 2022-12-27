@@ -1,1 +1,1 @@
-learn gcloud terraform!!!!
+manage google cloud infrastructure using terraform
