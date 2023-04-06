@@ -1,0 +1,16 @@
+apt update
+sudo apt install apache2 -y
+sudo apt install php7.4 php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y
+sudo apt install mariadb-server mariadb-client
+
+## Install WP Dulu ##
+sudo mysql -u root -p
+# kalo mau kasih root password sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
+
+CREATE DATABASE wordpress
+CREATE USER 'wp-user'@'localhost' IDENTIFIED BY 'goingout'; #kalo web server dan db dipisah, ada settingan tambahan untuk networknya
+GRANT ALL ON wordpress.* TO 'wp-user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
